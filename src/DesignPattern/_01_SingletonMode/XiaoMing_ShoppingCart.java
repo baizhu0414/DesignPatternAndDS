@@ -1,4 +1,4 @@
-package DesignPattern.SingletonMode;
+package DesignPattern._01_SingletonMode;
 
 import java.util.ArrayList;
 import java.util.List;

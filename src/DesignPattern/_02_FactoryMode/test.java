@@ -1,4 +1,4 @@
-package DesignPattern.FactoryMode;
+package DesignPattern._02_FactoryMode;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -15,7 +15,7 @@ public class test {
         int n = sc.nextInt();
         sc.nextLine();
         for (int i = 0; i < n; i++) {
-            String str = sc.next();// 积木Blocks类全称DesignPattern.FactoryMode.CircleBlocks
+            String str = sc.next();// 积木Blocks类全称DesignPattern._02_FactoryMode.CircleBlocks
             int val = sc.nextInt();
             try {
                 Class<Blocks> cls = (Class<Blocks>) Class.forName(str);

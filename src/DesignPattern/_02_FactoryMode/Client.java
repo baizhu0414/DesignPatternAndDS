@@ -1,4 +1,4 @@
-package DesignPattern.FactoryMode;
+package DesignPattern._02_FactoryMode;
 
 // 抽象产品
 interface Shape {
