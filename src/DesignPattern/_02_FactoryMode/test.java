@@ -60,6 +60,7 @@ interface Blocks {
 
 // 圆形积木
 class CircleBlocks implements Blocks {
+    @SuppressWarnings("unused")
     private String str;
     private int num;
 
