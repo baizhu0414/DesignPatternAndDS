@@ -6,12 +6,16 @@ public class TranslateAdapter {
         ClassAdapter adapter = new ClassAdapter();
         adapter.translate("中文", "英文", "你好世界！");
         adapter.translate("英语", "中文", "hello world！");
+
+        // 创建一个类适配器对象
+        ObjectAdapter adapterObj = new ObjectAdapter();
+        adapterObj.translate("中文", "英文", "你好世界！");
+        adapterObj.translate("英语", "中文", "hello world！");
     }
 }
 
 /**
- * @author Created by njy on 2023/6/11
- *         类适配器：通过多重继承目标接口和被适配者类方式来实现适配
+ * 类型1. 类适配器：通过多重继承目标接口和被适配者类方式来实现适配
  */
 class ClassAdapter extends Translator implements Target {
 
@@ -30,6 +34,25 @@ class ClassAdapter extends Translator implements Target {
     }
 }
 
+/**
+ * 类型2. 对象适配器：使用组合的方式
+ */
+class ObjectAdapter implements Target {
+ 
+    private Translator translator=new Translator();
+ 
+    @Override
+    public void translate(String source, String target, String words) {
+        if("中文".equals(source) && "英文".equals(target)) {
+            //汉--》英
+            translator.translateInEn(words);
+        } else {
+            //英--》汉
+            translator.translateInZh(words);
+        }
+    }
+}
+
 
 interface Target {
 
@@ -44,8 +67,7 @@ interface Target {
 }
 
 /**
- * @author Created by njy on 2023/6/8
- *         源对象(source）：充当翻译
+ * 源对象(source）：充当翻译
  */
 class Translator {
 
